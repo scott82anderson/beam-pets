@@ -1,0 +1,13 @@
+input SeedInput {
+    hasPeople: Int
+    people: [SeedPersonInput!]
+    person: SeedPersonInput
+}
+
+input SeedPersonInput {
+    name: String
+}
+
+extend type Mutation {
+    seed(input: SeedInput! @spread): [Person!] @field(resolver: "Seed")
+}

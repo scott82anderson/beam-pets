@@ -1,0 +1,31 @@
+type Person {
+  id: ID!
+  name: String!
+  description: String
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+input CreatePersonInput {
+  name: String!
+  description: String
+}
+
+input UpdatePersonInput {
+  id: ID!
+  name: String!
+  description: String
+}
+
+extend type Mutation {
+  createPerson(input: CreatePersonInput! @spread): Person
+    @field(resolver: "People@create")
+
+  updatePerson(input: UpdatePersonInput! @spread): Person
+    @field(resolver: "People@update")
+}
+
+extend type Query {
+  people: [Person!]! @all
+  person(id: ID @eq): Person @find
+}
