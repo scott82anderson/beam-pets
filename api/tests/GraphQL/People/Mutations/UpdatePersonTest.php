@@ -25,7 +25,7 @@ class UpdatePersonTest extends GraphQLTestCase
     }
 
     /** @test */
-    public function it_creates_a_person()
+    public function it_updates_a_person()
     {
         $person = Person::factory()->create();
 
