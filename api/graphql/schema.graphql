@@ -6,4 +6,5 @@ type Query
 type Mutation
 
 #import person.graphql
+#import pet.graphql
 #import seed.graphql

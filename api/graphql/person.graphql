@@ -4,6 +4,7 @@ type Person {
   description: String
   created_at: DateTime!
   updated_at: DateTime!
+  pets: [Pet!]! @hasMany
 }
 
 input CreatePersonInput {

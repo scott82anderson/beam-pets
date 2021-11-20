@@ -1,0 +1,42 @@
+type Pet {
+  id: ID!
+  name: String!
+  age: Int
+  species: String
+  created_at: DateTime!
+  updated_at: DateTime!
+  owner: Person! @belongsTo
+}
+
+input CreatePetInput {
+  name: String!
+  age: Int
+  species: String
+  owner: CreatePersonBelongsTo
+}
+
+input CreatePersonBelongsTo {
+  connect: ID
+  create: CreatePersonInput
+  update: UpdatePersonInput
+}
+
+input UpdatePetInput {
+  id: ID!
+  name: String!
+  age: Int
+  species: String
+}
+
+extend type Mutation {
+  createPet(input: CreatePetInput! @spread): Pet
+    @field(resolver: "Pets@create")
+
+  updatePet(input: UpdatePetInput! @spread): Pet
+    @field(resolver: "Pets@update")
+}
+
+extend type Query {
+  pets: [Pet!]! @all
+  pet(id: ID @eq): Pet @find
+}
