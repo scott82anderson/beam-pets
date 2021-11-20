@@ -13,6 +13,7 @@ const PeopleList = ({ people }) => {
             <a href={`/person/${person.id}`}>{person.name}</a>
           </h4>
           <p>{person.description}</p>
+          <p>Pets: {person.pets.length}</p>
         </li>
       ))}
     </ul>
