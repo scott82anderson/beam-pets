@@ -17,8 +17,6 @@ input CreatePetInput {
 
 input CreatePersonBelongsTo {
   connect: ID
-  create: CreatePersonInput
-  update: UpdatePersonInput
 }
 
 input UpdatePetInput {
@@ -30,7 +28,7 @@ input UpdatePetInput {
 
 extend type Mutation {
   createPet(input: CreatePetInput! @spread): Pet
-    @field(resolver: "Pets@create")
+    @create
 
   updatePet(input: UpdatePetInput! @spread): Pet
     @field(resolver: "Pets@update")
