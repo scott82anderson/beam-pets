@@ -6,6 +6,8 @@ const Person = ({ person, onUpdate }) => {
     onUpdate({ id: person.id, ...values });
   };
 
+  console.log(person);
+
   return (
     <>
       <DetailsForm person={person} onSubmit={handleSubmit} />
@@ -21,6 +23,7 @@ Person.propTypes = {
     id: PropTypes.string,
     name: PropTypes.string,
     description: PropTypes.string,
+    pets: PropTypes.array
   }),
   onUpdate: PropTypes.func,
 };

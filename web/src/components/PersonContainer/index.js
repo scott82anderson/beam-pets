@@ -12,6 +12,12 @@ const GET_PERSON = /* GraphQL */ `
       id
       name
       description
+      pets {
+        id
+        name
+        age
+        species
+      }
     }
   }
 `;

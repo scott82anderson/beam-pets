@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import FormField from "@/components/FormField";
+import PetList from "@/components/PetList";
 
 const DetailsForm = ({ person, onSubmit }) => {
   const handleSubmit = (event) => {
@@ -21,6 +22,8 @@ const DetailsForm = ({ person, onSubmit }) => {
         />
         <input type="submit" value="Update" />
       </form>
+      <h4>Pets</h4>
+      <PetList pets={person.pets} />
     </div>
   );
 };
@@ -30,6 +33,7 @@ DetailsForm.propTypes = {
     id: PropTypes.string,
     name: PropTypes.string,
     description: PropTypes.string,
+    pets: PropTypes.array
   }),
   onSubmit: PropTypes.func,
 };
