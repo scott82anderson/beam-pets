@@ -32,6 +32,8 @@ extend type Mutation {
 
   updatePet(input: UpdatePetInput! @spread): Pet
     @field(resolver: "Pets@update")
+
+  deletePet(id: ID!): Pet @delete
 }
 
 extend type Query {
