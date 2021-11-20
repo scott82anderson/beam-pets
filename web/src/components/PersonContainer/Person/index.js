@@ -1,16 +1,17 @@
 import PropTypes from "prop-types";
 import DetailsForm from "./DetailsForm";
+import PetList from "@/components/PetList";
 
 const Person = ({ person, onUpdate }) => {
   const handleSubmit = (values) => {
     onUpdate({ id: person.id, ...values });
   };
 
-  console.log(person);
-
   return (
     <>
       <DetailsForm person={person} onSubmit={handleSubmit} />
+      <h4>Pets</h4>
+      <PetList pets={person.pets} onUpdate={() => onUpdate(person)} />
       <p>
         <a href="/">Back to people...</a>
       </p>
