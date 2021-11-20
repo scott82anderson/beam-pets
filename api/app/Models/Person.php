@@ -13,4 +13,12 @@ class Person extends Model
         'name',
         'description',
     ];
+
+    /**
+     * Pets owned by this person.
+     */
+    public function pets(): HasMany
+    {
+        return $this->hasMany(Pet::class, 'owner_id');
+    }
 }
