@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models;
 use Illuminate\Database\Seeder;
+//
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         Models\Person::factory()
             ->count(4)
+            ->has(Models\Pet::factory()->count(3))
             ->create();
     }
 }
