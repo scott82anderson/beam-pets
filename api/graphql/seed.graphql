@@ -2,9 +2,15 @@ input SeedInput {
     hasPeople: Int
     people: [SeedPersonInput!]
     person: SeedPersonInput
+    pets: [SeedPetInput!]
+    pet: SeedPetInput
 }
 
 input SeedPersonInput {
+    name: String
+}
+
+input SeedPetInput {
     name: String
 }
 
