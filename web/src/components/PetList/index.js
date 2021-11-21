@@ -14,6 +14,7 @@ const PetList = ({ pets=[], ownerId, onUpdate }) => {
   const onPetCreate = Pets.mutations.useCreate("");
 
   const onSubmit = (pet) => {
+    console.log(pet);
     pet = {
       ...pet,
       age: Number(pet.age),
@@ -47,9 +48,7 @@ const PetList = ({ pets=[], ownerId, onUpdate }) => {
         </thead>
         <tbody>
           {pets.map((pet) => (
-            <tr key={pet.id}>
-              <Pet pet={pet} onPetUpdate={onSubmit} onUpdate={onUpdate} />
-            </tr>
+              <Pet key={pet.id} pet={pet} onPetUpdate={onSubmit} onUpdate={onUpdate} />
           ))}
         </tbody>
       </table>

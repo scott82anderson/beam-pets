@@ -16,9 +16,9 @@ const GET_PET = /* GraphQL */ `
 `;
 
 const Pet = ({ pet, onPetUpdate, onUpdate }) => {
+  const [showingForm, showForm] = useState(false);
   const query = [GET_PET, { id: pet.id }];
   const onDelete = Pets.mutations.useDelete(query);
-  const [showingForm, showForm] = useState(false);
 
   const handleRemove = (event) => {
     event.preventDefault();
@@ -38,18 +38,20 @@ const Pet = ({ pet, onPetUpdate, onUpdate }) => {
   return (
     <>
       {!showingForm && 
-      <>
+      <tr>
         <td>{pet.name}</td>
         <td>{pet.age}</td>
         <td>{pet.species}</td>
-        <td><a href="#" onClick={(event) => showForm(true)}>Edit</a></td>
-        <td><a href="#" onClick={(event) => handleRemove(event)}>Remove</a></td>
-      </>
+        <td><a href="#" onClick={(event) => showForm(true)} data-testid="edit-button">Edit</a></td>
+        <td><a href="#" onClick={(event) => handleRemove(event)} data-testid="remove-button">Remove</a></td>
+      </tr>
       }
       {showingForm && 
-        <td colspan="5">
-          <PetForm pet={pet} onSubmit={handleSubmit} onCancel={handleCancel} />
-        </td>
+        <tr>
+          <td colSpan="5">
+            <PetForm pet={pet} onSubmit={handleSubmit} onCancel={handleCancel} />
+          </td>
+        </tr>
       }
     </>
   );

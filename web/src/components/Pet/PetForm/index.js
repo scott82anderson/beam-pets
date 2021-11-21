@@ -17,6 +17,7 @@ const PetForm = ({ pet, onSubmit, onCancel }) => {
         <FormField
           label="Age"
           name="age"
+          type="number"
           value={pet.age}
         />
         <FormField
