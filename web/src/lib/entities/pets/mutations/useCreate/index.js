@@ -16,12 +16,13 @@ export default function useCreate(query) {
 
   /**
    * @param {String} name
-   * @param {Number} age
+   * @param {String} age
    * @param {String} species
    * @param {String} owner
    * @returns {Object}
    */
-  function create({ name, age, species, owner }) {
+  function create({ name, ageStr, species, owner }) {
+    const age = Number(ageStr);
     return mutate({ name, age, species, owner: { connect: owner }});
   }
 
