@@ -23,7 +23,6 @@ const PetList = ({ pets=[], ownerId, onUpdate }) => {
   const onPetCreate = Pets.mutations.useCreate("");
 
   const onSubmit = (pet) => {
-    console.log(pet);
     pet = {
       ...pet,
       age: Number(pet.age),

@@ -4,7 +4,6 @@ namespace App\GraphQL\Mutations;
 
 use App\Models\Pet;
 use App\Services;
-use Illuminate\Support\Facades\Log;
 
 class Pets
 {
@@ -15,7 +14,6 @@ class Pets
 
     public function create($root, array $input): Pet
     {
-        Log::debug(json_encode($input));
         return $this->pet->create($input);
     }
 
