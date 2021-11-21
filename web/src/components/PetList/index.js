@@ -14,6 +14,10 @@ const PetList = ({ pets=[], ownerId, onUpdate }) => {
   const onPetCreate = Pets.mutations.useCreate("");
 
   const onSubmit = (pet) => {
+    pet = {
+      ...pet,
+      age: Number(pet.age),
+    }
     if (pet.id === "") {
       const newPet = {
         ...pet,
@@ -44,14 +48,14 @@ const PetList = ({ pets=[], ownerId, onUpdate }) => {
         <tbody>
           {pets.map((pet) => (
             <tr key={pet.id}>
-              <Pet pet={pet} onUpdate={onUpdate} />
+              <Pet pet={pet} onPetUpdate={onSubmit} onUpdate={onUpdate} />
             </tr>
           ))}
         </tbody>
       </table>
       <button onClick={() => showAdd(!showingAdd)}>Add new pet</button>
       { showingAdd && 
-        <PetForm pet={{id: ""}} onSubmit={onSubmit} />
+        <PetForm pet={{id: ""}} onSubmit={onSubmit} onCancel={() => showAdd(false)} />
       }
     </>
   );
