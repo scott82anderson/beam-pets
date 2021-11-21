@@ -8,6 +8,9 @@ const GET_PEOPLE = /* GraphQL */ `
       id
       name
       description
+      pets {
+        name
+      }
     }
   }
 `;

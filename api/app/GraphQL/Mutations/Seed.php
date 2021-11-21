@@ -49,6 +49,7 @@ class Seed
     {
         Models\Person::factory()
             ->count($count)
+            ->has(Models\Pet::factory()->count(3))
             ->create();
     }
 }

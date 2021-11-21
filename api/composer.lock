@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b012dae6f7e949982cb3ff91f72019f8",
+    "content-hash": "7293dcd511cf7c68c24b5be9e7e8e624",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5776,6 +5776,129 @@
             "time": "2021-05-11T21:00:37+00:00"
         },
         {
+            "name": "laravel/telescope",
+            "version": "v4.6.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/telescope.git",
+                "reference": "505623831a5b35454491add4a4a2fd0af34d21b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/505623831a5b35454491add4a4a2fd0af34d21b9",
+                "reference": "505623831a5b35454491add4a4a2fd0af34d21b9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "laravel/framework": "^8.29",
+                "php": "^7.3|^8.0",
+                "symfony/var-dumper": "^5.0"
+            },
+            "require-dev": {
+                "ext-gd": "*",
+                "orchestra/testbench": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Telescope\\TelescopeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Telescope\\": "src/",
+                    "Laravel\\Telescope\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                },
+                {
+                    "name": "Mohamed Said",
+                    "email": "mohamed@laravel.com"
+                }
+            ],
+            "description": "An elegant debug assistant for the Laravel framework.",
+            "keywords": [
+                "debugging",
+                "laravel",
+                "monitoring"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/telescope/issues",
+                "source": "https://github.com/laravel/telescope/tree/v4.6.7"
+            },
+            "time": "2021-11-16T17:04:00+00:00"
+        },
+        {
+            "name": "mll-lab/laravel-graphql-playground",
+            "version": "v2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mll-lab/laravel-graphql-playground.git",
+                "reference": "f76efb5d83827df355d548e2f78766787a3d1688"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mll-lab/laravel-graphql-playground/zipball/f76efb5d83827df355d548e2f78766787a3d1688",
+                "reference": "f76efb5d83827df355d548e2f78766787a3d1688",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6 || ^7 || ^8",
+                "illuminate/contracts": "5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6 || ^7 || ^8",
+                "illuminate/support": "5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6 || ^7 || ^8",
+                "php": "^7.1 || ^8"
+            },
+            "require-dev": {
+                "laravel/lumen-framework": "5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6 || ^7",
+                "localheinz/composer-normalize": "^1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MLL\\GraphQLPlayground\\GraphQLPlaygroundServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MLL\\GraphQLPlayground\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Benedikt Franke",
+                    "email": "benedikt@franke.tech"
+                }
+            ],
+            "description": "Easily integrate GraphQL Playground into your Laravel project",
+            "keywords": [
+                "graphql",
+                "graphql-playground",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/mll-lab/laravel-graphql-playground/issues",
+                "source": "https://github.com/mll-lab/laravel-graphql-playground/tree/v2.5.0"
+            },
+            "time": "2021-02-01T17:55:49+00:00"
+        },
+        {
             "name": "mockery/mockery",
             "version": "1.4.3",
             "source": {
@@ -7774,5 +7897,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }

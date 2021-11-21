@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Person extends Model
 {
@@ -12,5 +13,14 @@ class Person extends Model
     protected $fillable = [
         'name',
         'description',
+        'owner_id',
     ];
+
+    /**
+     * Pets owned by this person.
+     */
+    public function pets(): HasMany
+    {
+        return $this->hasMany(Pet::class, 'owner_id');
+    }
 }
