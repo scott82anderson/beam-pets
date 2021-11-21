@@ -10,7 +10,6 @@ const Person = ({ person, onUpdate }) => {
   return (
     <>
       <DetailsForm person={person} onSubmit={handleSubmit} />
-      <h4>Pets</h4>
       <PetList pets={person.pets} ownerId={person.id} onUpdate={() => onUpdate(person)} />
       <p>
         <a href="/">Back to people...</a>

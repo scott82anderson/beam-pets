@@ -36,6 +36,7 @@ const PetList = ({ pets=[], ownerId, onUpdate }) => {
 
   return (
     <>
+      <h4>Pets</h4>
       <table>
         <thead>
           <tr>
