@@ -12,7 +12,7 @@ const Person = ({ person, onUpdate }) => {
       <DetailsForm person={person} onSubmit={handleSubmit} />
       <PetList pets={person.pets} ownerId={person.id} onUpdate={() => onUpdate(person)} />
       <p>
-        <a href="/">Back to people...</a>
+        <a className="font-bold block py-4" href="/">Back to people...</a>
       </p>
     </>
   );

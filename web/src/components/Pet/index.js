@@ -39,11 +39,15 @@ const Pet = ({ pet, onPetUpdate, onUpdate }) => {
     <>
       {!showingForm && 
       <tr>
-        <td>{pet.name}</td>
-        <td>{pet.age}</td>
-        <td>{pet.species}</td>
-        <td><a href="#" onClick={(event) => showForm(true)} data-testid="edit-button">Edit</a></td>
-        <td><a href="#" onClick={(event) => handleRemove(event)} data-testid="remove-button">Remove</a></td>
+        <td className="px-6 py-4">{pet.name}</td>
+        <td className="px-6 py-4">{pet.age}</td>
+        <td className="px-6 py-4">{pet.species}</td>
+        <td className="px-6 py-4">
+          <a className="text-indigo-600 hover:text-indigo-900" href="#" onClick={(event) => showForm(true)} data-testid="edit-button">Edit</a>
+        </td>
+        <td className="px-6 py-4">
+          <a className="text-indigo-600 hover:text-indigo-900" href="#" onClick={(event) => handleRemove(event)} data-testid="remove-button">Remove</a>
+        </td>
       </tr>
       }
       {showingForm && 
